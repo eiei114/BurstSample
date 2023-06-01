@@ -2,25 +2,24 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Jobs;
-using UnityEngine.UI;
 
 namespace _BurstSample.Scripts
 {
     public class InstantiateJobBehaviour : MonoBehaviour
     {
+        [SerializeField]
+        private DemoManager demoManager;
+        
+        [SerializeField]
+        private MoveJobView moveJobView;
         //　インスタンス化するプレハブ
         [SerializeField]
         private GameObject prefab;
         //　一度にインスタンス化する数
         [SerializeField]
         private int numberToInstantiate = 100;
-        //　トータルでインスタンス化した数
-        private int total;
-        //　インスタンス化した数の表示テキスト
-        [SerializeField]
-        private Text totalText;
-        [SerializeField]
-        private Text fpsText;
+        //　トータルで生成した数
+        private int _total;
         //　ゲームオブジェクトのTransformの共有メモリ
         private TransformAccessArray transforms;
         //　ジョブハンドル
@@ -28,10 +27,19 @@ namespace _BurstSample.Scripts
  
  
         private void OnDisable() {
+            if (!demoManager.IsBurst()) {
+                return;
+            }
             //　ゲームオブジェクトが非アクティブになったらジョブの終了を待ってメモリ開放
             jobHandle.Complete();
             transforms.Dispose();
         }
+
+        private void Awake()
+        {
+            this.enabled = demoManager.IsBurst();
+        }
+
         private void Start()
         {
             //　オブジェクトのTransformをまとめる特殊な配列を作成
@@ -40,9 +48,6 @@ namespace _BurstSample.Scripts
  
         private void Update()
         {
-            // FPSの表示
-            fpsText.text = (1f / Time.deltaTime).ToString();
-            
             //　ジョブの終了を待つ
             jobHandle.Complete();
  
@@ -76,8 +81,8 @@ namespace _BurstSample.Scripts
                 transforms.Add(ins.transform);
             }
             //　数の表示
-            total += numberToInstantiate;
-            totalText.text = total.ToString();
+            _total += numberToInstantiate;
+            moveJobView.CountText = _total.ToString();
         }
     }
 }

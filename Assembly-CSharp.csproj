@@ -41,14 +41,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/ParrelSync/Examples/CustomArgumentExample.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/JobSample/SampleJobBehaviour.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalMove.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/DemoManager.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalInstantiate.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/MoveJobView.cs" />
      <Compile Include="Assets/_BurstSample/Scripts/MoveJob/MoveJob.cs" />
      <Compile Include="Assets/_BurstSample/Scripts/MoveJob/InstantiateJobBehaviour.cs" />
-     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalMove.cs" />
-     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalInstantiate.cs" />
      <Compile Include="Assets/_BurstSample/Scripts/JobSample/SampleJob.cs" />
-     <Compile Include="Assets/_BurstSample/Scripts/JobSample/SampleJobBehaviour.cs" />
-     <None Include="Assets/ParrelSync/VERSION.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -694,6 +694,15 @@
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/PPv2URPConverters.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
@@ -721,6 +730,12 @@
      <Reference Include="Unity.Burst.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Searcher.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
@@ -739,11 +754,11 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Services.Core">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
@@ -754,11 +769,20 @@
      <Reference Include="Unity.Mathematics">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.ShaderGraph.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -769,21 +793,26 @@
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Mathematics.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ParrelSync.csproj">
-      <Project>{6df56774-5c97-3bf9-e7f7-ecedcc2b62ac}</Project>
-      <Name>ParrelSync</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
