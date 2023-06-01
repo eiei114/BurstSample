@@ -41,8 +41,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/_BurstSample/Scripts/SampleJobBehaviour.cs" />
-     <Compile Include="Assets/_BurstSample/Scripts/SampleJob.cs" />
+     <Compile Include="Assets/ParrelSync/Examples/CustomArgumentExample.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/MoveJob.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/InstantiateJobBehaviour.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalMove.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/MoveJob/NormalInstantiate.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/JobSample/SampleJob.cs" />
+     <Compile Include="Assets/_BurstSample/Scripts/JobSample/SampleJobBehaviour.cs" />
+     <None Include="Assets/ParrelSync/VERSION.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -286,15 +292,6 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="ReportGeneratorMerged">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.burst@1.6.6/Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
@@ -309,6 +306,15 @@
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.burst@1.6.6/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="ReportGeneratorMerged">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.7f1/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll</HintPath>
@@ -712,6 +718,9 @@
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
@@ -742,8 +751,14 @@
      <Reference Include="Unity.EditorCoroutines.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -754,26 +769,21 @@
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Mathematics">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst.Editor">
-     <HintPath>/Users/eisuke/Documents/UnityProjects/BurstSample/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="ParrelSync.csproj">
+      <Project>{6df56774-5c97-3bf9-e7f7-ecedcc2b62ac}</Project>
+      <Name>ParrelSync</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
