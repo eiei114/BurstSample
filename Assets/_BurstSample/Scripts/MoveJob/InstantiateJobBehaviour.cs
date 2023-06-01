@@ -15,14 +15,14 @@ namespace _BurstSample.Scripts
         //　インスタンス化するプレハブ
         [SerializeField]
         private GameObject prefab;
-        //　一度にインスタンス化する数
+        //　一度に生成する数
         [SerializeField]
         private int numberToInstantiate = 100;
         //　トータルで生成した数
         private int _total;
         //　ゲームオブジェクトのTransformの共有メモリ
         private TransformAccessArray transforms;
-        //　ジョブハンドル
+        
         private JobHandle jobHandle;
  
  
